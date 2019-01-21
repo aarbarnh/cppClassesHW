@@ -10,5 +10,4 @@ public:
 	~Demon();
 }; 
 
-#endif
-
+#endif 
