@@ -11,7 +11,7 @@ Character::Character(int h, int a)
 {
 	characterHealth = h;
 	characterArmor = a;
-	cout << "A character with " << characterHealth << " health and " << characterArmor << " was created.\n\n";
+	cout << "A character with " << characterHealth << " health and " << characterArmor << " has been created.\n\n";
 }
 
 void Character::updateHealth()
@@ -24,16 +24,16 @@ void Character::updateHealth()
 		cin >> health;
 		if (characterHealth + health > 100)
 		{
-			cout << "\nYou entered a number that gave you over 100 health, choose again. Remember you have " << characterHealth << ".\n\n";
+			cout << "\nYou entered a number that resulted in more than 100 health, choose again. Remember health is at " << characterHealth << ".\n\n";
 		}
 		else if (characterHealth + health < 0)
 		{
-			cout << "\nYou entered a number that gave you lower than 100 health, choose again. Remember you have " << characterHealth << ".\n\n";
+			cout << "\nYou entered a number that resulted in less than 100 health, choose again. Remember health is at " << characterHealth << ".\n\n";
 		}
 		else
 		{
 			characterHealth += health; 
-			cout << "\nYour health has increased by " << health << ". Your total health is now " << characterHealth << ".\n\n";
+			cout << "\nHealth has increased by " << health << ". Total health is now " << characterHealth << ".\n\n";
 			healthVerification = true;
 		}
 
@@ -43,7 +43,28 @@ void Character::updateHealth()
 
 void Character::updateArmor()
 {
-	//characterArmor = armor;
+	bool armorVerification = false;
+	int armor;
+	while (armorVerification == false)
+	{
+		cout << "How much armor would you like to add on?\nEnter amount of armor to add: ";
+		cin >> armor;
+		if (characterArmor + armor > 100)
+		{
+			cout << "\nYou entered a number that resulted in more than 100 armor, choose again. Remember armor is at " << characterArmor << ".\n\n";
+		}
+		else if (characterArmor + armor < 0)
+		{
+			cout << "\nYou entered a number that resulted in less than 100 armor, choose again. Remember armor is at " << characterArmor << ".\n\n";
+		}
+		else
+		{
+			characterArmor += armor;
+			cout << "\nTotal armor has increased by " << armor << ". Total armor is now " << characterArmor << ".\n\n";
+			armorVerification = true;
+		}
+
+	}
 }
 
 int Character::getArmor()

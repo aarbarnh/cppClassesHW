@@ -7,7 +7,11 @@ class Slayer :
 {
 public:
 	Slayer();
+	Slayer(int h, int a, int g, int b);
 	~Slayer();
+private:
+	int slayerGuns;
+	int slayerBullets;
 };
 
 #endif
