@@ -1,9 +1,10 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+//parent/base class of character
 class Character
 {
-public:
+public: //public character setters, getters, constructors, destructor, and printInfo
 	Character();
 	Character(int h, int a);
 	void updateHealth();
@@ -13,11 +14,11 @@ public:
 	void printInfo();
 	~Character();
 
-protected:
+protected: //protected health and armor for inheritence to two sub/child classes
 	int characterHealth;
 	int characterArmor;
 
-private:
+private: //no privates
 };
 
 #endif

@@ -1,26 +1,26 @@
 #include "Character.h" //include header 
-#include <iostream>
+#include <iostream> //cout/cin
 
 using namespace std; //no std:: needed
 
-Character::Character()
+Character::Character() //primary constructor, no parameters
 {
 }
 
-Character::Character(int h, int a)
+Character::Character(int h, int a) //secondary constructor, sets health and armor
 {
 	characterHealth = h;
 	characterArmor = a;
 	cout << "A character with " << characterHealth << " health and " << characterArmor << " has been created.\n\n";
 }
 
-void Character::updateHealth()
+void Character::updateHealth() //update health variable 
 {
 	bool healthVerification = false;
 	int health;
-	while (healthVerification == false)
+	while (healthVerification == false) //verification loop, keep health <=100 and >=0
 	{
-		cout << "How much health would you like to add on?\nEnter amount of health to add: ";
+		cout << "How much health would you like to add on or take away?\nEnter amount of health to add or subtract: ";
 		cin >> health;
 		if (characterHealth + health > 100)
 		{
@@ -33,21 +33,20 @@ void Character::updateHealth()
 		else
 		{
 			characterHealth += health; 
-			cout << "\nHealth has increased by " << health << ". Total health is now " << characterHealth << ".\n\n";
+			cout << "\nHealth has changed by " << health << ". Total health is now " << characterHealth << ".\n\n";
 			healthVerification = true;
 		}
 
 	}
-	
 }
 
-void Character::updateArmor()
+void Character::updateArmor() //update armor variable
 {
 	bool armorVerification = false;
 	int armor;
-	while (armorVerification == false)
+	while (armorVerification == false) //verification loop, keep armor <=100 and >=0
 	{
-		cout << "How much armor would you like to add on?\nEnter amount of armor to add: ";
+		cout << "How much armor would you like to add on or take away?\nEnter amount of armor to add or subtract: ";
 		cin >> armor;
 		if (characterArmor + armor > 100)
 		{
@@ -60,28 +59,28 @@ void Character::updateArmor()
 		else
 		{
 			characterArmor += armor;
-			cout << "\nTotal armor has increased by " << armor << ". Total armor is now " << characterArmor << ".\n\n";
+			cout << "\nTotal armor has changed by " << armor << ". Total armor is now " << characterArmor << ".\n\n";
 			armorVerification = true;
 		}
 
 	}
 }
 
-int Character::getArmor()
+int Character::getArmor() //getter for armor 
 {
 	return characterArmor;
 }
 
-int Character::getHealth()
+int Character::getHealth() //getter for health
 {
 	return characterHealth;
 }
 
-void Character::printInfo()
+void Character::printInfo() //print variables, health and armor 
 {
 	cout << "This character has " << characterHealth << " health and " << characterArmor << " armor.\n\n";
 }
 
-Character::~Character()
+Character::~Character() //destructor
 {
 }
